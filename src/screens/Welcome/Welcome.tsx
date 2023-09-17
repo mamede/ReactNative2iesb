@@ -7,4 +7,4 @@ function Welcome() {
   return <S.Text>Hello World</S.Text>;
 }
 
-export default Welcome;
+export {Welcome};

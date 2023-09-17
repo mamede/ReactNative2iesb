@@ -2,7 +2,7 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 
 // ROUTES
-import Routes from '@routes/index';
+import {Routes} from '@routes/index';
 
 // SERVICES
 import {QueryClientProvider} from 'react-query';
