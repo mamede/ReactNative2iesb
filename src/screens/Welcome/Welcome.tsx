@@ -4,7 +4,11 @@ import React from 'react';
 import * as S from './Welcome.styles';
 
 function Welcome() {
-  return <S.Text>Hello World</S.Text>;
+  return (
+    <S.Container>
+      <S.Text>Hello World</S.Text>
+    </S.Container>
+  );
 }
 
 export {Welcome};

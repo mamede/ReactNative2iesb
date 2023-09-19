@@ -4,7 +4,11 @@ import React from 'react';
 import * as S from './SignIn.styles';
 
 function SignIn() {
-  return <S.Text>Hello World SignIn</S.Text>;
+  return (
+    <S.Container>
+      <S.Text>Hello World SignIn</S.Text>
+    </S.Container>
+  );
 }
 
 export {SignIn};
