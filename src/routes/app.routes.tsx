@@ -1,6 +1,5 @@
-import {Platform} from 'react-native';
-
 // ASSETS
+import Home from '@assets/icons/home.svg';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,26 +8,10 @@ import {Welcome} from '@screens/Welcome/Welcome';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
-const TabBarIcon = (props: any) => {
-  const {focused, name, color, size} = props;
-
-  let iconName;
-
-  if (name === 'Welcome') {
-    iconName = focused ? 'home' : 'home-outline';
-  } else if (name === 'Compras') {
-    iconName = focused ? 'list' : 'list-outline';
-  } else {
-    iconName = focused ? 'settings' : 'settings-outline';
-  }
-
-  return <Ionicons name={iconName} size={size} color={color} />;
-};
-
 export function AppRoutes() {
   return (
     <Navigator
-      screenOptions={({route}) => ({
+      screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#319204',
@@ -36,16 +19,14 @@ export function AppRoutes() {
         tabBarStyle: {
           backgroundColor: '#fff',
           borderTopWidth: 0,
-          height: Platform.OS === 'android' ? 'auto' : 96,
         },
-        tabBarIcon: props => <TabBarIcon {...props} name={route.name} />,
-      })}>
+      }}>
       <Screen
         name="Welcome"
         component={Welcome}
         options={{
           tabBarIcon: ({color}) => (
-            <Ionicons name="home" size={30} color={color} />
+            <Home width={30} height={30} color={color} />
           ),
         }}
       />
