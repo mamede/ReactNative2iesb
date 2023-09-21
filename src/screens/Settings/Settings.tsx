@@ -1,14 +1,14 @@
 import React from 'react';
 
 // STYLES
-import * as S from './SignIn.styles';
+import * as S from './Settings.styles';
 
-function SignIn() {
+function Settings() {
   return (
     <S.Container>
-      <S.Text>Hello World SignIn</S.Text>
+      <S.Text>Hello World Settings</S.Text>
     </S.Container>
   );
 }
 
-export {SignIn};
+export {Settings};

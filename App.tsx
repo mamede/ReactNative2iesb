@@ -4,12 +4,12 @@ import {StatusBar} from 'react-native';
 // ROUTES
 import {Routes} from '@routes/index';
 
+// CONTEXTS
+import {AuthContextProvider} from './src/contexts/AuthContext';
+
 // SERVICES
 import {QueryClientProvider} from 'react-query';
 import {queryClient} from '@services/queryClient';
-
-// CONTEXTS
-import {AuthContextProvider} from '@contexts/AuthContext';
 
 // STYLES
 import {ThemeProvider} from 'styled-components/native';

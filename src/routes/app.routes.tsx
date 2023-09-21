@@ -1,7 +1,7 @@
 // ASSETS
-import Home from '@assets/icons/home.svg';
-import Settings from '@assets/icons/settings.svg';
-import Shopping from '@assets/icons/shopping.svg';
+import HomeIcon from '@assets/icons/home.svg';
+import SettingsIcon from '@assets/icons/settings.svg';
+import ShoppingIcon from '@assets/icons/shopping.svg';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -29,7 +29,7 @@ export function AppRoutes() {
         component={Home}
         options={{
           tabBarIcon: ({color}) => (
-            <Home width={30} height={30} color={color} />
+            <HomeIcon width={30} height={30} color={color} />
           ),
         }}
       />
@@ -38,7 +38,7 @@ export function AppRoutes() {
         component={Shopping}
         options={{
           tabBarIcon: ({color}) => (
-            <Shopping width={30} height={30} color={color} />
+            <ShoppingIcon width={30} height={30} color={color} />
           ),
         }}
       />
@@ -47,7 +47,7 @@ export function AppRoutes() {
         component={Settings}
         options={{
           tabBarIcon: ({color}) => (
-            <Settings width={30} height={30} color={color} />
+            <SettingsIcon width={30} height={30} color={color} />
           ),
         }}
       />

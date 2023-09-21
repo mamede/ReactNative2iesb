@@ -1,9 +1,9 @@
 import React from 'react';
 
 // STYLES
-import * as S from './SignIn.styles';
+import * as S from './Home.styles';
 
-function SignIn() {
+function Home() {
   return (
     <S.Container>
       <S.Text>Hello World Home</S.Text>
@@ -11,4 +11,4 @@ function SignIn() {
   );
 }
 
-export {SignIn};
+export {Home};

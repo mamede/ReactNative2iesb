@@ -3,14 +3,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {User} from '@shared/types/userTypes';
 import {USER_STORAGE} from '@storage/storageConfig';
 
-export async function storageUserSave(user: UserDTO) {
+export async function storageUserSave(user: User) {
   await AsyncStorage.setItem(USER_STORAGE, JSON.stringify(user));
 }
 
 export async function storageUserGet() {
   const storage = await AsyncStorage.getItem(USER_STORAGE);
 
-  const user: UserDTO = storage ? JSON.parse(storage) : {};
+  const user: User = storage ? JSON.parse(storage) : {};
 
   return user;
 }
