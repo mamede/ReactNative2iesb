@@ -8,7 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import * as S from './Header.styles';
 
 // TYPES
-import {HeaderProps} from 'src/shared/types/headerTypes';
+import {HeaderProps} from '@shared/types/headerTypes';
 
 function Header({title}: HeaderProps) {
   const navigation = useNavigation();
