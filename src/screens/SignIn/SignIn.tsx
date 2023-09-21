@@ -11,17 +11,15 @@ import {
   Alert,
   Keyboard,
   KeyboardAvoidingView,
-  KeyboardAvoidingViewComponent,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import {usePostSignin} from '@services/Auth/PostSignIn';
 import {useEffect, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 function SignIn() {
-  const [email, setEmail] = useState<string>('contaTeste@gmail.com');
-  const [password, setPassword] = useState<string>('123');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const background = require('@assets/images/SignInBackground.png');
   const navigation = useNavigation();
@@ -49,7 +47,7 @@ function SignIn() {
       Alert.alert('Erro ao realizar login!');
     }
   }, [postSignIn.isSuccess, postSignIn.isError]);
-  // keyboard avoid
+
   return (
     <KeyboardAvoidingView behavior="padding">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -68,14 +66,14 @@ function SignIn() {
             <S.InputContainer>
               <S.Input
                 placeholder="e-mail"
-                placeholderTextColor={'#fefefe'}
+                placeholderTextColor={'#000'}
                 autoCapitalize="none"
                 onChangeText={e => setEmail(e)}
                 value={email}
               />
               <S.Input
                 placeholder="senha"
-                placeholderTextColor={'#fefefe'}
+                placeholderTextColor={'#000'}
                 autoCapitalize="none"
                 secureTextEntry
                 onChangeText={p => setPassword(p)}

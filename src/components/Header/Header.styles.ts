@@ -34,5 +34,7 @@ export const BackContainer = styled.TouchableOpacity`
 export const TextHeader = styled.Text`
   font-size: 20px;
   margin-left: 12px;
-  color: #fff;
+  color: #000;
+  background-color: #fafafa1a;
+  font-weight: 700;
 `;
