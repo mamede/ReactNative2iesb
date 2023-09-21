@@ -1,3 +1,6 @@
+// ASSETS
+import User from '@assets/icons/user.svg';
+
 // COMPONENTS
 import {Header} from '@components/Header/Header';
 
@@ -22,15 +25,12 @@ function Welcome() {
       <S.Content>
         <S.Title>Boas Vindas</S.Title>
         <S.Description>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy
+          Crie seu carrinho e faça suas compras na palma da mão.
         </S.Description>
         <S.ButtonContainer>
-          <S.Button>
-            <S.ButtonText>Criar conta Google</S.ButtonText>
-          </S.Button>
-          <S.Button>
-            <S.ButtonText>Criar conta Usuario e Senha</S.ButtonText>
+          <S.Button onPress={(): void => navigation.navigate('SignUp')}>
+            <User width={26} height={26} color="white" />
+            <S.ButtonText>Criar conta</S.ButtonText>
           </S.Button>
         </S.ButtonContainer>
         <S.Footer>

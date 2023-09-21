@@ -53,11 +53,11 @@ export const ButtonContainer = styled.View`
 export const Button = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border: 2px solid #fff;
   height: 60px;
-  padding: 0 12px;
-  background-color: red;
+  padding: 0 48px;
+  background: #6cc51d;
   color: white;
   width: 100%;
   border-radius: 10px;
@@ -69,6 +69,7 @@ export const ButtonText = styled.Text`
   color: #fff;
   font-size: 16px;
   text-align: center;
+  margin-left: 72px;
 `;
 
 export const Footer = styled.View`
@@ -87,7 +88,7 @@ export const FooterText = styled.Text`
 
 export const FooterLinkContainer = styled.TouchableOpacity``;
 export const FooterLink = styled.Text`
-  color: #ff6b6c;
+  color: #6cc51d;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
