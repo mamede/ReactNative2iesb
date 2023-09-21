@@ -1,37 +1,37 @@
-import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
-export const Container = styled(SafeAreaView)`
+export const Container = styled.View`
+  flex: 1;
+`;
+
+export const BackgroundContainer = styled.View`
+  position: relative;
   align-items: center;
   justify-content: center;
+  top: -15px;
+`;
+
+export const Background = styled.ImageBackground`
+  width: 100%;
+  height: 100%;
+  top: 12px;
 `;
 
 export const HeaderContainer = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 72px;
-  padding-left: 12px;
-  padding-right: 12px;
+  position: absolute;
+  top: 10px;
 `;
 
-export const HeaderContent = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+export const Content = styled.View`
+  flex: 1;
+  padding: 0 30px;
+  justify-content: center;
 `;
 
-export const VoidContainer = styled.View`
-  width: 48px;
-`;
-
-export const BackContainer = styled.TouchableOpacity`
-  padding: 8px;
-`;
-
-export const TextHeader = styled.Text`
-  font-size: 20px;
-  margin-left: 12px;
+export const Title = styled.Text`
+  position: absolute;
+  font-size: 24px;
+  color: red;
+  font-family: 'RobotoSlab-Medium';
+  margin: 64px 0 24px;
 `;
