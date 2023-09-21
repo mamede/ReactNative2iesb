@@ -4,9 +4,6 @@ import {StatusBar} from 'react-native';
 // ROUTES
 import {Routes} from '@routes/index';
 
-// CONTEXTS
-import {AuthContextProvider} from './src/contexts/AuthContext';
-
 // SERVICES
 import {QueryClientProvider} from 'react-query';
 import {queryClient} from '@services/queryClient';
@@ -20,9 +17,7 @@ function App(): JSX.Element {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="light-content" />
-        <AuthContextProvider>
-          <Routes />
-        </AuthContextProvider>
+        <Routes />
       </ThemeProvider>
     </QueryClientProvider>
   );

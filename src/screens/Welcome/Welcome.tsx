@@ -9,9 +9,10 @@ import {useNavigation} from '@react-navigation/native';
 
 // STYLES
 import * as S from './Welcome.styles';
+import {ButtonComponent} from '@components/Button/Button';
 
 function Welcome() {
-  const background = require('@assets/images/SignInBackground.png');
+  const background = require('@assets/images/WelcomeBackground.png');
   const navigation = useNavigation();
 
   return (
@@ -27,12 +28,11 @@ function Welcome() {
         <S.Description>
           Crie seu carrinho e faça suas compras na palma da mão.
         </S.Description>
-        <S.ButtonContainer>
-          <S.Button onPress={(): void => navigation.navigate('SignUp')}>
-            <User width={26} height={26} color="white" />
-            <S.ButtonText>Criar conta</S.ButtonText>
-          </S.Button>
-        </S.ButtonContainer>
+        <ButtonComponent
+          title="Criar Conta"
+          icon={<User width={26} height={26} color="white" />}
+          onPress={(): void => navigation.navigate('SignUp')}
+        />
         <S.Footer>
           <S.FooterText>Já tem uma conta?</S.FooterText>
           <S.FooterLinkContainer>
