@@ -1,6 +1,7 @@
 // ASSETS
 import Home from '@assets/icons/home.svg';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Settings from '@assets/icons/settings.svg';
+import Shopping from '@assets/icons/shopping.svg';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -30,8 +31,24 @@ export function AppRoutes() {
           ),
         }}
       />
-      <Screen name="Compras" component={Welcome} />
-      <Screen name="Ajustes" component={Welcome} />
+      <Screen
+        name="Compras"
+        component={Welcome}
+        options={{
+          tabBarIcon: ({color}) => (
+            <Shopping width={30} height={30} color={color} />
+          ),
+        }}
+      />
+      <Screen
+        name="Ajustes"
+        component={Welcome}
+        options={{
+          tabBarIcon: ({color}) => (
+            <Settings width={30} height={30} color={color} />
+          ),
+        }}
+      />
     </Navigator>
   );
 }
