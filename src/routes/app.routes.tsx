@@ -5,7 +5,9 @@ import Shopping from '@assets/icons/shopping.svg';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {Welcome} from '@screens/Welcome/Welcome';
+import {Home} from '@screens/Home/Home';
+import {Shopping} from '@screens/Shopping/Shopping';
+import {Settings} from '@screens/Settings/Settings';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
@@ -23,8 +25,8 @@ export function AppRoutes() {
         },
       }}>
       <Screen
-        name="Welcome"
-        component={Welcome}
+        name="Home"
+        component={Home}
         options={{
           tabBarIcon: ({color}) => (
             <Home width={30} height={30} color={color} />
@@ -32,8 +34,8 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Compras"
-        component={Welcome}
+        name="Shopping"
+        component={Shopping}
         options={{
           tabBarIcon: ({color}) => (
             <Shopping width={30} height={30} color={color} />
@@ -41,8 +43,8 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Ajustes"
-        component={Welcome}
+        name="Settings"
+        component={Settings}
         options={{
           tabBarIcon: ({color}) => (
             <Settings width={30} height={30} color={color} />

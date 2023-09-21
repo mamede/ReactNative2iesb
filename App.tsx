@@ -8,6 +8,9 @@ import {Routes} from '@routes/index';
 import {QueryClientProvider} from 'react-query';
 import {queryClient} from '@services/queryClient';
 
+// CONTEXTS
+import {AuthContextProvider} from '@contexts/AuthContext';
+
 // STYLES
 import {ThemeProvider} from 'styled-components/native';
 import theme from '@styles/theme';
@@ -17,7 +20,9 @@ function App(): JSX.Element {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="light-content" />
-        <Routes />
+        <AuthContextProvider>
+          <Routes />
+        </AuthContextProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

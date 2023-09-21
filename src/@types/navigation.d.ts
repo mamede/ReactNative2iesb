@@ -4,6 +4,9 @@ export declare global {
       Welcome: undefined;
       SignIn: undefined;
       SignUp: undefined;
+      Home: undefined;
+      Shopping: undefined;
+      Settings: undefined;
     }
   }
 }
