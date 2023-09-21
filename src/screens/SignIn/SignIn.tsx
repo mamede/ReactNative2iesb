@@ -7,9 +7,17 @@ import {useNavigation} from '@react-navigation/native';
 // STYLES
 import * as S from './SignIn.styles';
 import {ButtonComponent} from '@components/Button/Button';
-import {Alert, KeyboardAvoidingViewComponent} from 'react-native';
+import {
+  Alert,
+  Keyboard,
+  KeyboardAvoidingView,
+  KeyboardAvoidingViewComponent,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import {usePostSignin} from '@services/Auth/PostSignIn';
 import {useEffect, useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 function SignIn() {
   const [email, setEmail] = useState<string>('contaTeste@gmail.com');
@@ -43,48 +51,55 @@ function SignIn() {
   }, [postSignIn.isSuccess, postSignIn.isError]);
   // keyboard avoid
   return (
-    <>
-      <S.BackgroundContainer>
-        <S.Background source={background} />
-        <S.HeaderContainer>
-          <Header title="Boas Vindas" />
-        </S.HeaderContainer>
-      </S.BackgroundContainer>
-      <S.Content>
-        <S.Title>Boas Vindas</S.Title>
-        <S.Description>Entre em sua conta e comece a comprar!</S.Description>
-        <S.InputContainer>
-          <S.Input
-            placeholder="e-mail"
-            placeholderTextColor={'#fefefe'}
-            autoCapitalize="none"
-            onChangeText={e => setEmail(e)}
-            value={email}
-          />
-          <S.Input
-            placeholder="senha"
-            placeholderTextColor={'#fefefe'}
-            autoCapitalize="none"
-            secureTextEntry
-            onChangeText={p => setPassword(p)}
-            value={password}
-          />
-          <ButtonComponent
-            title="Entrar"
-            onPress={(): void => handleSignIn()}
-          />
-        </S.InputContainer>
+    <KeyboardAvoidingView behavior="padding">
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View>
+          <S.BackgroundContainer>
+            <S.Background source={background} />
+            <S.HeaderContainer>
+              <Header title="Boas Vindas" />
+            </S.HeaderContainer>
+          </S.BackgroundContainer>
+          <S.Content>
+            <S.Title>Boas Vindas</S.Title>
+            <S.Description>
+              Entre em sua conta e comece a comprar!
+            </S.Description>
+            <S.InputContainer>
+              <S.Input
+                placeholder="e-mail"
+                placeholderTextColor={'#fefefe'}
+                autoCapitalize="none"
+                onChangeText={e => setEmail(e)}
+                value={email}
+              />
+              <S.Input
+                placeholder="senha"
+                placeholderTextColor={'#fefefe'}
+                autoCapitalize="none"
+                secureTextEntry
+                onChangeText={p => setPassword(p)}
+                value={password}
+              />
+              <ButtonComponent
+                title="Entrar"
+                onPress={(): void => handleSignIn()}
+              />
+            </S.InputContainer>
 
-        <S.Footer>
-          <S.FooterText>Não tem conta ainda?</S.FooterText>
-          <S.FooterLinkContainer>
-            <S.FooterLink onPress={(): void => navigation.navigate('SignUp')}>
-              Cadastre-se
-            </S.FooterLink>
-          </S.FooterLinkContainer>
-        </S.Footer>
-      </S.Content>
-    </>
+            <S.Footer>
+              <S.FooterText>Não tem conta ainda?</S.FooterText>
+              <S.FooterLinkContainer>
+                <S.FooterLink
+                  onPress={(): void => navigation.navigate('SignUp')}>
+                  Cadastre-se
+                </S.FooterLink>
+              </S.FooterLinkContainer>
+            </S.Footer>
+          </S.Content>
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 }
 

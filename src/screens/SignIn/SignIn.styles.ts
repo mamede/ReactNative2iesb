@@ -23,8 +23,8 @@ export const Content = styled.View`
   bottom: 0;
   justify-content: center;
   background: #f4f5f9;
-  padding: 32px 16px 40px;
-  border-radius: 10px 10px 0 0;
+  padding: 32px 51px 40px;
+  border-radius: 20px 20px 0 0;
 `;
 
 export const Title = styled.Text`
