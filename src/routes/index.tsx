@@ -11,6 +11,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// COMPONENTS
+import {CartComponent} from '@components/CartComponent/CartComponent';
+
 // SCREENS
 import {SignIn} from '@screens/SignIn/SignIn';
 import {SignUp} from '@screens/SignUp/SignUp';
@@ -43,20 +46,22 @@ export function Routes() {
         }}
       />
       <Tab.Screen
-        name="Shopping"
-        component={Shopping}
-        options={{
-          tabBarIcon: ({color}) => (
-            <ShoppingIcon width={30} height={30} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Settings"
         component={Settings}
         options={{
           tabBarIcon: ({color}) => (
             <SettingsIcon width={30} height={30} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Shopping"
+        component={Shopping}
+        options={{
+          tabBarIcon: () => (
+            <CartComponent
+              icon={<ShoppingIcon width={20} height={20} color="#fff" />}
+            />
           ),
         }}
       />
@@ -66,10 +71,10 @@ export function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="HomeTabs" component={HomeTabs} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="SignIn" component={SignIn} />
-        <Stack.Screen name="HomeTabs" component={HomeTabs} />
+        <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
