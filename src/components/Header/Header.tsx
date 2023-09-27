@@ -10,14 +10,14 @@ import * as S from './Header.styles';
 // TYPES
 import {HeaderProps} from '@shared/types/headerTypes';
 
-function Header({title}: HeaderProps) {
+function Header({title, color}: HeaderProps) {
   const navigation = useNavigation();
   return (
     <S.Container>
       <S.HeaderContainer>
         <S.HeaderContent>
           <S.BackContainer onPress={(): void => navigation.goBack()}>
-            <Arrow width={16} height={16} color="#FFF" />
+            <Arrow width={16} height={16} color={color || '#FFF'} />
           </S.BackContainer>
           <S.TextHeader>{title}</S.TextHeader>
           <S.VoidContainer />

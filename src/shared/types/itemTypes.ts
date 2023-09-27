@@ -6,6 +6,7 @@ export interface ItemProps {
   unit: string;
   imageUrl: string;
   description: string;
+  quantity?: number;
 }
 
 export interface Category {

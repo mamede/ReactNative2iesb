@@ -21,6 +21,7 @@ import {Welcome} from '@screens/Welcome/Welcome';
 import {Home} from '@screens/Home/Home';
 import {Shopping} from '@screens/Shopping/Shopping';
 import {Settings} from '@screens/Settings/Settings';
+import {Details} from '@screens/Details/Details';
 
 export function Routes() {
   const HomeTabs = () => (
@@ -63,6 +64,16 @@ export function Routes() {
               icon={<ShoppingIcon width={20} height={20} color="#fff" />}
             />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="Details"
+        component={Details}
+        options={{
+          tabBarButton: () => null,
+          tabBarStyle: {
+            display: 'none',
+          },
         }}
       />
     </Tab.Navigator>

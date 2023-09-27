@@ -1,3 +1,5 @@
+import {ItemProps} from '@shared/types/itemTypes';
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
@@ -8,6 +10,7 @@ export declare global {
       Home: undefined;
       Shopping: undefined;
       Settings: undefined;
+      Details: {item: ItemProps};
     }
   }
 }

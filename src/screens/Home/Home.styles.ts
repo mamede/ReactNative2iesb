@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 export const Container = styled(SafeAreaView)`
   flex: 1;
   background-color: #d9d9d9;
+  padding-top: 16px;
 `;
 
 export const Header = styled.View`
@@ -12,6 +13,14 @@ export const Header = styled.View`
   align-items: center;
   margin-bottom: 16px;
   padding: 0 40px;
+`;
+
+export const Title = styled.Text`
+  color: #000;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 16px;
+  padding-bottom: 16px;
 `;
 
 export const User = styled.View`
@@ -56,9 +65,10 @@ export const ProductContainer = styled.TouchableOpacity`
   width: 100%;
   max-width: 181px;
   background-color: #fff;
-  padding-top: 32px;
+  padding: 32px 0;
   margin-bottom: 16px;
   border: 1px solid #d9d9d9;
+  border-radius: 8px;
 `;
 
 export const ProductImage = styled.Image`
@@ -93,46 +103,4 @@ export const ProductUnit = styled.Text`
 
 export const FlatList = styled.FlatList<ItemProps>`
   padding-left: 16px;
-`;
-
-export const ProductFooter = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  border-top-width: 1px;
-  border-top-color: #d9d9d9;
-  width: 100%;
-  padding: 12px 0;
-`;
-
-export const ProductFooterText = styled.Text`
-  color: #868889;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  margin-left: 8px;
-`;
-
-export const ProductHasQuantity = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-  border-top-width: 1px;
-  border-top-color: #d9d9d9;
-  width: 100%;
-  padding: 12px 0;
-`;
-
-export const RemoveItem = styled.TouchableOpacity`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const AddItem = styled.TouchableOpacity`
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 `;

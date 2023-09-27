@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from 'react';
 
-// ICONS
-import ShoppingIcon from '@assets/icons/shopping.svg';
-
 // NAVIGATION
 import {useIsFocused, useNavigation} from '@react-navigation/native';
 
 // SERVICES
 import {useGetProducts} from '@services/Products/GetProducts';
+
 // STYLES
 import * as S from './Home.styles';
 import {ItemProps} from '@shared/types/itemTypes';
 import {ListEmpty} from '@components/ListEmpty/ListEmpty';
+import {Text} from 'react-native-svg';
 
 function Home() {
   const navigation = useNavigation();
@@ -22,6 +21,7 @@ function Home() {
   useEffect(() => {
     if (!isFocused) {
       setItems([]);
+      getProducts.remove();
     }
   }, [isFocused]);
 
@@ -31,10 +31,8 @@ function Home() {
     }
   }, [getProducts.data]);
 
-  const hasQuantity = 1;
-
   return (
-    <S.Container>
+    <S.Container edges={['top']}>
       <S.Header>
         <S.Button onPress={(): void => navigation.navigate('Settings')}>
           <S.AvatarContainer>
@@ -47,12 +45,15 @@ function Home() {
         </S.User>
       </S.Header>
 
+      <S.Title>Produtos recomendados</S.Title>
+
       <S.FlatList
         data={items}
         keyExtractor={item => item._id}
         numColumns={2}
         renderItem={({item}) => (
-          <S.ProductContainer>
+          <S.ProductContainer
+            onPress={(): void => navigation.navigate('Details', {item})}>
             <S.ProductImage
               source={{
                 uri: item.imageUrl,
@@ -63,28 +64,15 @@ function Home() {
               <S.ProductTitle>{item.name}</S.ProductTitle>
               <S.ProductUnit>{item.unit}</S.ProductUnit>
             </S.ProductInfo>
-
-            {hasQuantity > 0 ? (
-              <S.ProductHasQuantity>
-                <S.RemoveItem>
-                  <ShoppingIcon width={20} height={20} color="#6CC51D" />
-                </S.RemoveItem>
-                <S.ProductFooterText>Adicionar</S.ProductFooterText>
-                <S.AddItem>
-                  <ShoppingIcon width={20} height={20} color="#6CC51D" />
-                </S.AddItem>
-              </S.ProductHasQuantity>
-            ) : (
-              <S.ProductFooter>
-                <ShoppingIcon width={20} height={20} color="#6CC51D" />
-                <S.ProductFooterText>Adicionar</S.ProductFooterText>
-              </S.ProductFooter>
-            )}
           </S.ProductContainer>
         )}
-        ListEmptyComponent={
-          <ListEmpty message="Nenhum produto foi encontrado, tente novamente mais tarde!" />
-        }
+        ListEmptyComponent={() => {
+          return getProducts.isFetching ? (
+            <Text>Carregando...</Text>
+          ) : (
+            <ListEmpty message="Nenhum produto foi encontrado, tente novamente mais tarde!" />
+          );
+        }}
       />
     </S.Container>
   );
