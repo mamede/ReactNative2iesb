@@ -1,4 +1,5 @@
 import {ItemProps} from '@shared/types/itemTypes';
+import {Platform} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
@@ -102,5 +103,5 @@ export const ProductUnit = styled.Text`
 `;
 
 export const FlatList = styled.FlatList<ItemProps>`
-  padding-left: 16px;
+  padding-left: ${Platform.OS === 'android' ? 16 : 32}px;
 `;

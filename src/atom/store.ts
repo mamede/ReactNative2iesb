@@ -11,3 +11,12 @@ export const cartTotalQuantity = atom(get => {
   );
   return totalQuantity;
 });
+
+export const cartTotal = atom(get => {
+  const items = get(cartItems);
+  const totalValue = items.reduce((total, item) => {
+    const itemValue = (item.price || 0) * (item.quantity || 0);
+    return total + itemValue;
+  }, 0);
+  return totalValue;
+});

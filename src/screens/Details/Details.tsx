@@ -14,13 +14,14 @@ import {Header} from '@components/Header/Header';
 import {ButtonComponent} from '@components/Button/Button';
 import {cartQuantity, cartItems} from '@atom/store';
 import {useAtom} from 'jotai';
-import {useIsFocused} from '@react-navigation/native';
+import {useIsFocused, useNavigation} from '@react-navigation/native';
 
 function Details(props: any) {
   const product = props.route.params.item as ItemProps;
   const [quantity, setQuantity] = useAtom(cartQuantity);
   const [, setItems] = useAtom(cartItems);
   const isFocused = useIsFocused();
+  const navigation = useNavigation();
 
   React.useEffect(() => {
     if (!isFocused) {
@@ -37,6 +38,7 @@ function Details(props: any) {
   };
 
   const handleAddToCart = (): void => {
+    navigation.navigate('HomeTabs');
     setItems(prevItems => {
       const itemExistenteIndex = prevItems.findIndex(
         item => item.name === product.name,
