@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "637832020465",
+    "project_id": "grocery-app-rn-2-iesb",
+    "storage_bucket": "grocery-app-rn-2-iesb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637832020465:android:09c8fcd5bba0c3cf0a8450",
+        "android_client_info": {
+          "package_name": "com.reactnative2iesb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxipJyHAAbadDp8fM6OsKQwFRnHsPndAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
