@@ -38,7 +38,7 @@ function Details(props: any) {
   };
 
   const handleAddToCart = (): void => {
-    navigation.navigate('HomeTabs');
+    navigation.goBack();
     setItems(prevItems => {
       const itemExistenteIndex = prevItems.findIndex(
         item => item.name === product.name,

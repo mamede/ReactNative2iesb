@@ -1,6 +1,5 @@
-import axios from 'axios';
+import {CreateAxios} from 'rn-http-module';
 
-export const api = axios.create({
-  baseURL:
-    'https://master--relaxed-fenglisu-464c83.netlify.app/.netlify/functions',
-});
+export const api = CreateAxios(
+  'https://master--relaxed-fenglisu-464c83.netlify.app/.netlify/functions',
+);

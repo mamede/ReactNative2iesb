@@ -132,7 +132,7 @@ function Shopping() {
               title={getButtonTitle()}
               onPress={(): void => {
                 if (step === 0 || step === 2) {
-                  navigation.navigate('HomeTabs');
+                  navigation.goBack();
                 } else {
                   handleOrder();
                 }
