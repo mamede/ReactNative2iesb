@@ -23,6 +23,7 @@
     "react-native-vector-icons": "^10.0.0",
     "react-query": "^3.39.3",
     "rn-http-module": "^0.1.0",
+    "rn-login-module": "^0.1.0",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {

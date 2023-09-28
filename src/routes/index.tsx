@@ -15,9 +15,10 @@ const Tab = createBottomTabNavigator();
 import {CartComponent} from '@components/CartComponent/CartComponent';
 
 // SCREENS
-import {SignIn} from '@screens/SignIn/SignIn';
-import {SignUp} from '@screens/SignUp/SignUp';
-import {Welcome} from '@screens/Welcome/Welcome';
+// import {SignIn} from '@screens/SignIn/SignIn';
+// import {SignUp} from '@screens/SignUp/SignUp';
+// import {Welcome} from '@screens/Welcome/Welcome';
+import {Welcome, SignIn, SignUp} from 'rn-login-module';
 import {Home} from '@screens/Home/Home';
 import {Shopping} from '@screens/Shopping/Shopping';
 import {Settings} from '@screens/Settings/Settings';
